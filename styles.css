@@ -20,7 +20,8 @@ body {
 
     display: flex;
     align-items: center;
-    padding-left: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 @keyframes moveStripes {
@@ -38,20 +39,28 @@ body {
 }
 .nav-tabs a {
     background-color: white;
-    
     color: #333;
     text-decoration: none;
-
-    padding: 18px 15px;
-
+    padding: 18px 9px;
     border-radius: 10px 10px 0 0;
-
-    font-size: 16px;
-
+    font-size: 14px;
     position: relative;
     top: 20px;
-
+    white-space: nowrap;
     transition: 0.2s;
+
+}
+.nav-tabs {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.navbar {
+    padding-left: 20px;
+    padding-right: 10px;
 }
 
 .nav-tabs a:hover {
@@ -68,13 +77,7 @@ body {
     margin-right: 50px;
 }
 
-.nav-tabs {
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
-    margin-left: 40%;
-}
+
 
 .logo {
     width:150px;
@@ -146,7 +149,7 @@ body {
     display: block;
     width: fit-content;
     margin: -45px auto 60px;
-    
+    animation: moveArrow .9s alternate infinite;
     color: #6b9bb8;
     font-size: 35px;
     text-decoration: none;
@@ -154,6 +157,13 @@ body {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+@keyframes moveArrow{
+    from{
+         transform: translateY(-6px);
+    } to {
+        transform: translateY(6px);
+    }
+}
 .down-arrow:hover {
     color: #4f829f;
     transform: translateY(6px);
@@ -296,6 +306,7 @@ html {
 .interest-box:hover {
     transform: translateY(-8px) rotate(0deg);
     box-shadow: 8px 10px 0px #bdd3e2;
+    text-decoration: none;
 }
 
 .interest-box i {
@@ -428,4 +439,108 @@ html {
     border-radius: 20px;
 
     font-size: 15px;
+}
+
+.priorExpImg {
+    width: 500px;
+    border: 2px solid #6b9bb8;
+    border-radius: 8px;
+}
+
+
+/* PRIOR EXPERIENCE ENTRY */
+
+.prior-entry {
+    max-width: 780px;
+    margin: 55px auto 80px;
+    padding: 0 30px;
+    color: #343434;
+}
+
+.prior-entry-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.entry-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #7898aa;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.prior-entry-header h1 {
+    font-family: 'Kreon', serif;
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.prior-entry-header h2 {
+    font-family: 'Kreon', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #888;
+    margin-top: 10px;
+}
+
+.entry-divider {
+    color: #8baabe;
+    letter-spacing: 3px;
+    margin-top: 25px;
+}
+
+.prior-entry-image {
+    text-align: center;
+    margin: 35px auto;
+}
+
+.prior-entry-image img {
+    width: 100%;
+    max-width: 620px;
+    border: 5px solid white;
+    outline: 1px solid #c9d5dc;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+}
+
+.prior-entry-image figcaption {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+    margin-top: 12px;
+}
+
+.prior-entry-text {
+    max-width: 650px;
+    margin: 40px auto;
+    font-size: 16px;
+    line-height: 1.95;
+    text-align: left;
+}
+
+.prior-entry-text p {
+    margin-bottom: 25px;
+}
+
+.entry-end {
+    text-align: center;
+    color: #8baabe;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin: 45px 0;
+}
+
+@media (max-width: 600px) {
+    .prior-entry {
+        margin-top: 35px;
+        padding: 0 20px;
+    }
+
+    .prior-entry-header h1 {
+        font-size: 34px;
+    }
+
+    .prior-entry-text {
+        font-size: 15px;
+    }
 }
